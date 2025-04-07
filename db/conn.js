@@ -1,12 +1,14 @@
 const { Sequelize } = require("sequelize");
 
-const port = process.env.PORT || 3000;
+const db_port = process.env.DB_PORT || 5432;
 const db_name = process.env.DB_NAME || "toughtsdb";
 const db_password = process.env.DB_PASSWORD || "root";
+const db_username = process.env.DB_USERNAME || "root";
 
-const sequelize = new Sequelize(db_name, "root", db_password, {
+const sequelize = new Sequelize(db_name, db_username, db_password, {
   host: "localhost",
   dialect: "postgres",
+  port: db_port,
 });
 
 try {
