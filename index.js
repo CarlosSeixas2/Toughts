@@ -1,3 +1,6 @@
+const dotenv = require("dotenv");
+dotenv.config();
+
 const path = require("path");
 const os = require("os");
 
@@ -8,6 +11,7 @@ const FileStore = require("session-file-store")(session);
 const flash = require("express-flash");
 
 const app = express();
+
 
 const conn = require("./db/conn");
 
