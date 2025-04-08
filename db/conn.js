@@ -1,14 +1,14 @@
+const dotenv = require("dotenv");
+dotenv.config();
+
 const { Sequelize } = require("sequelize");
 
-const db_port = process.env.DB_PORT || 5432;
-const db_name = process.env.DB_NAME || "toughtsdb";
-const db_password = process.env.DB_PASSWORD || "root";
-const db_username = process.env.DB_USERNAME || "root";
+const db_url = process.env.DATABASE_URL || "postgres://root:root@localhost:5432/toughtsdb";
 
-const sequelize = new Sequelize(db_name, db_username, db_password, {
-  host: "localhost",
+console.log(db_url)
+
+const sequelize = new Sequelize(db_url, {
   dialect: "postgres",
-  port: db_port,
 });
 
 try {

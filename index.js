@@ -1,6 +1,3 @@
-const dotenv = require("dotenv");
-dotenv.config();
-
 const path = require("path");
 const os = require("os");
 
